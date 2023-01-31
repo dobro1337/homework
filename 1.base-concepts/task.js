@@ -23,11 +23,11 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   } else if (isNaN(amount) || amount < 0) {
     return `Параметр "Общая стоимость" содержит неправильное значение "${amount}"`;
   }
+
   let totalAmount;
   let creditBody = amount - contribution;//тело кредита.
   let today = new Date(); //определяем сегодняшнее число
   let currentYear = today.getFullYear(); //текущий год
-  let currentDay = today.getDate();// текущий день
   let currentMonth = today.getMonth();//текущий месяц
   
   let countMonth = 0;//кол-во месяцев
