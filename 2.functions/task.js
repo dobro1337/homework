@@ -18,23 +18,36 @@ function getArrayParams(arr) {
 
 // Задание 2
 function worker(arr) {
-  let sum;
+  let sum = 0;
 
-  // Ваш код
+  for(let i =0;i<arr.length;i++){
+    sum+=arr[i];
+  }
 
   return sum;
 }
 
 function makeWork(arrOfArr, func) {
-  let max;
+  let max = -1000;
 
-  // Ваш кода
-  // for ...
-  
+  for(let i = 0; i<arrOfArr.length; i++) {
+    let temp = func(arrOfArr[i]);
+    max = (max < temp) ? temp : max;
+  }
+  console.log(max);
   return max;
 }
 
 // Задание 3
 function worker2(arr) {
-  // Ваш код
+  let min, max;
+  min = 1000;
+  max = -1000;
+  
+  for(let i = 0;i<arr.length; i++){
+    max = (max < arr[i]) ? arr[i] : max;
+    min = (min > arr[i]) ? arr[i] : min;
+  }
+
+  return Math.abs(min-max);
 }
