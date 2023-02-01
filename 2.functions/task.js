@@ -1,8 +1,8 @@
 // Задание 1
 function getArrayParams(arr) {
   let min, max, sum, avg;
-  min = 101;
-  max = -101;
+  min = Infinity ;
+  max = -Infinity ;
   sum = 0;
   
   for(let i = 0;i<arr.length; i++){
@@ -41,8 +41,8 @@ function makeWork(arrOfArr, func) {
 // Задание 3
 function worker2(arr) {
   let min, max;
-  min = 1000;
-  max = -1000;
+  min = Infinity ;
+  max = -Infinity ;
   
   for(let i = 0;i<arr.length; i++){
     max = (max < arr[i]) ? arr[i] : max;
