@@ -58,9 +58,9 @@ class AlarmClock {
 
 function testCase() {
     let alarm = new AlarmClock();
-    alarm.addClock("19:00",()=>console.log("звонок 1"),1);
-    alarm.addClock("18:30",()=>{console.log("звонок 2");alarm.removeClock(2)},2);
-    alarm.addClock("18:32",()=>{console.log("звонок 3");alarm.stop();alarm.clearAlarms();alarm.printAlarms()},3);
+    alarm.addClock("19:28",()=>console.log("звонок 1"),1);
+    alarm.addClock("19:29",()=>{console.log("звонок 2");alarm.removeClock(2)},2);
+    alarm.addClock("19:30",()=>{console.log("звонок 3");alarm.stop();alarm.clearAlarms();alarm.printAlarms()},3);
     alarm.printAlarms();
     alarm.start();
 }
