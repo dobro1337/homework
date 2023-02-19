@@ -7,14 +7,12 @@ function cachingDecoratorNew(func) {
       console.log("Из кэша: " + cache[hash]);
       return "Из кэша: " + cache[hash];
     }
-    else{
-      if(keys.length === 5) {
-        delete cache[keys[0]];
-      }
-      cache[hash] = func(...args);
-      console.log("Вычисляем: " + cache[hash]);
-      return "Вычисляем: " + cache[hash];
+    if(keys.length === 5) {
+      delete cache[keys[0]];
     }
+    cache[hash] = func(...args);
+    console.log("Вычисляем: " + cache[hash]);
+    return "Вычисляем: " + cache[hash];
   }
 }
 
