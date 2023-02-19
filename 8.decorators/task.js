@@ -22,15 +22,15 @@ function debounceDecoratorNew(func,timeout) {
   function wrapper(...args) {
     wrapper.allCount++;
     if(timeoutId){
-      timeoutId = null;
       clearTimeout(timeoutId);
     }else {
       wrapper.count++;
       func(...args);
-      timeoutId = setTimeout(()=> func(...args) ,timeout);
     }
+    timeoutId = setTimeout(()=> {func(...args);wrapper.count++} ,timeout);
   }
   wrapper.count = 0;
   wrapper.allCount = 0;
   return wrapper;
 }
+
